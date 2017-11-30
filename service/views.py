@@ -22,7 +22,6 @@ def test(request):
 @csrf_exempt
 def savedata_signup(request):
     if request.method == "POST":
-        #print(request.body)
 
         lst = request.body.decode("utf-8").split(",")
         username = lst[0]
@@ -50,6 +49,7 @@ def savedata_login(request):
 
         arr = feature_extractor.get_feature_signal(brain_signal)
 
+        filename = username
         if username == "":
             filename = "test.out"
         path = get_path(filename)
